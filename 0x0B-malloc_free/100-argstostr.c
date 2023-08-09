@@ -1,14 +1,16 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
- * argstostr - main entry
- * @ac: int input
- * @av: double pointer array
- * Return: 0
+ * argstostr - function that concatenates all arguments of a program
+ * @ac: the argument counter
+ * @av: the program arguments
+ * Return: return the concatenated arguments
  */
+
 char *argstostr(int ac, char **av)
 {
-	int i, n, r = 0, l = 0;
+	int i, n, j = 0, l = 0;
 	char *str;
 
 	if (ac == 0 || av == NULL)
@@ -28,12 +30,12 @@ char *argstostr(int ac, char **av)
 	{
 	for (n = 0; av[i][n]; n++)
 	{
-		str[r] = av[i][n];
-		r++;
+		str[j] = av[i][n];
+		j++;
 	}
-	if (str[r] == '\0')
+	if (str[j] == '\0')
 	{
-		str[r++] = '\n';
+		str[j++] = '\n';
 	}
 	}
 	return (str);
